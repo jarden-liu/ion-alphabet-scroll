@@ -1,0 +1,25 @@
+{
+    "name": "ion-alphabet-scroll",
+    "version": "1.0.0",
+    "authors": [
+        "jarden-liu <372002582@qq.com>"
+    ],
+    "description": "a  scrolling lists with alphabetical indexing for ionic",
+    "main": [
+        "src/ion-alphabet-scroll.js",
+        "src/ion-alphabet-scroll.css"
+    ],
+    "keywords": [
+        "ionic",
+        "ion",
+        "angular",
+        "alphabet",
+        "scrolling"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+    ]
+}
