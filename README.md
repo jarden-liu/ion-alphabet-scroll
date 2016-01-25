@@ -5,7 +5,7 @@ ion-alphabet-scroll
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Configure](#Configure)
+- [Configure](#configure)
 
 # Installation
 
@@ -37,16 +37,16 @@ Add `ion-alphabet-scroll` into your template , but it 'must be under the ion-con
       <div>Name: {{item.name}}</div>
 </ion-alphabet-scroll>
 ```
-this 'ng-model' is the model you would like to sort .
+this `ng-model` is the model you would like to sort .
 
-the 'key' is the name of the key would like to order by.
+the `key` is the name of the key would like to order by.
 
-ps:Don't set ion-content scroll='false' .
+ps:Don't set ion-content `scroll='false'` .
 
 
 # Configure
 
-If you don't want to sort your data lists , you can set 'sort="false"'. Default is true .
+If you don't want to sort your data lists , you can set `sort="false"`. Default is true .
 ```html
 <ion-alphabet-scroll ng-model="listModel"  key="keyName" sort="false">
       <div>Name: {{item.name}}</div>
@@ -60,11 +60,11 @@ At the same time, you can also adjust the location of the alpha sidebar, through
  2.subHeader-height
  3.tab-height
 ```
-the 'header-height' is your app header height.Default is 48px. 
+the `header-height` is your app header height.Default is 48px. 
 
-the 'subHeader-height' is the subHeader height.Default is 44px. 
+the `subHeader-height` is the subHeader height.Default is 44px. 
 
-the 'tab-height' is the bottom tab height.Default is 50px. 
+the `tab-height` is the bottom tab height.Default is 50px. 
 ```html
 <ion-alphabet-scroll ng-model="listModel"  key="keyName" sort="false" header-height="48px">
       <div>Name: {{item.name}}</div>
