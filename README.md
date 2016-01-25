@@ -9,18 +9,18 @@ ion-alphabet-scroll
 
 # Installation
 
-> Use bower to install:
+1.Use bower to install:
 ```bash
 bower install ion-alphabet-scroll --save
 ```
 
-> Import javascript and css file into your index.html:
+2.Import javascript and css file into your index.html:
 ```html
 <script src="lib/ion-alphabet-scroll/src/ion-alphabet-scroll.js"></script>
 <link href="lib/ion-alphabet-scroll/src/ion-alphabet-scroll.css" rel="stylesheet">
 ```
 
-> Import the `ion-alphabet-scroll` to your Ionic App
+3.Import the `ion-alphabet-scroll` to your Ionic App
 ```javascript
 angular.module('app', [
   'ionic',
