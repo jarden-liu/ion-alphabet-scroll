@@ -41,7 +41,7 @@
                 } else {
                     headerHeight = 48;
                 }
-                var subHeaderHeight = attrs.subheader === "true" ? 44 : 0;
+                var subHeaderHeight = attrs.subHeaderHeight === "true" ? 44 : 0;
 
                 var sidebarMarginTop = headerHeight + subHeaderHeight + sidebarMar;
 
