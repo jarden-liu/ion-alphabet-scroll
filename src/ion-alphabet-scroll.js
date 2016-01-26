@@ -130,7 +130,7 @@
 
                         var touchFuc = function(ev) {
                             ev.preventDefault();
-                            var Y = ev.touches[0].pageY;
+                            var Y = ev.touches && ev.touches[0] ? ev.touches[0].pageY : ev.pageY;
                             if (Y < (sidebarMarginTop)) {
                                 return;
                             } else {
@@ -158,13 +158,19 @@
                         scope.$on('ion-alphabet-sidebar-on-touch', function() {
                             scope.alphabetTipShow = true;
                             angular.element($document[0].body).bind('touchstart', touchFuc);
+                            angular.element($document[0].body).bind('mousedown', touchFuc);
+
                             angular.element($document[0].body).bind('touchmove', touchFuc);
+                            angular.element($document[0].body).bind('mousemove', touchFuc);
                         });
 
                         scope.$on('ion-alphabet-sidebar-on-release', function() {
                             scope.alphabetTipShow = false;
                             angular.element($document[0].body).unbind('touchmove', touchFuc);
+                            angular.element($document[0].body).unbind('mousemove', touchFuc);
+
                             angular.element($document[0].body).unbind('touchstart', touchFuc);
+                            angular.element($document[0].body).unbind('mousedown', touchFuc);
                         });
 
 
