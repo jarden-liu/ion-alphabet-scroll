@@ -33,7 +33,12 @@
                 ].join(''));
 
 
+
+
                 var sidebarMar = 10;
+                if (ionic.Platform.isIOS()) {
+                    sidebarMar += 15;
+                }
                 var headerHeight;
                 if (attrs.headerHeight) {
                     var heightStr = attrs.headerHeight.replace('px', '');
