@@ -18,7 +18,9 @@
                     '<div class="ion_alphabet_list" data-ng-repeat="(letter, items) in sortedAlphabetList" ng-if="items.length>0">',
                     '<ion-item class="alphabet_item_divider" id="index_{{letter}}">{{letter}}</ion-item>',
                     '<div class="alphabet_item_box">',
+                    '<ion-list>',
                     '<ion-item class="alphabet_item" ng-repeat="item in items"></ion-item>',
+                    '</ion-list>',
                     '</div></div>',
                     ' </div>'
                 ].join(''));
@@ -186,6 +188,18 @@
                         $rootScope.ionAlphabetSidebarOnRelease = function() {
                             $rootScope.$broadcast('ion-alphabet-sidebar-on-release');
                         }
+
+                        $rootScope.$on('ion-alphabet-scroll-hide', function() {
+                            element.css('display', 'none');
+                            var sidebar = angular.element(document.querySelector('#ionAlphabetSidebar'));
+                            sidebar.css('display', 'none');
+                        });
+
+                        $rootScope.$on('ion-alphabet-scroll-show', function() {
+                            element.css('display', 'block');
+                            var sidebar = angular.element(document.querySelector('#ionAlphabetSidebar'));
+                            sidebar.css('display', 'block');
+                        });
 
 
                         angular.element($window).bind('resize', function() {
