@@ -57,12 +57,12 @@ At the same time, you can also adjust the location of the alpha sidebar, through
 
 ```bash
  1.header-height
- 2.subHeader-height
+ 2.sub-header-height
  3.tab-height
 ```
 the `header-height` is your app header height.Default is 48px. 
 
-the `subHeader-height` is the subHeader height.Default is 44px. 
+the `sub-header-height` is the subHeader height.Default is 44px. 
 
 the `tab-height` is the bottom tab height.Default is 50px. 
 ```html
