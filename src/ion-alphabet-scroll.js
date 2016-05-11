@@ -29,10 +29,7 @@
                     '</ul>'
                 ].join(''));
 
-                var tipBox = angular.element(['<div class="ion_alphabet_tip" ng-if="alphabetTipShow">',
-                    '<div>{{alphabetTipContent}}</div>',
-                    ' </div>'
-                ].join(''));
+                var tipBox = angular.element('<div class="ion_alphabet_tip" ng-show="alphabetTipShow">{{alphabetTipContent}}</div>');
 
 
 
@@ -74,7 +71,7 @@
                 element.html('');
                 element.append(template);
                 element.parent().parent().after(sidebar);
-                element.parent().after(tipBox);
+                element.parent().parent().after(tipBox);
 
                 return function(scope, element, attrs, ngModel) {
                     scope.alphabetListClass = attrs.class;
@@ -114,7 +111,7 @@
                                 return;
                             }
                             if (letter == '#') {
-                                letter = 'X';
+                                letter = 'Z';
                                 $ionicScrollDelegate.scrollBottom();
                                 return;
                             }
@@ -130,7 +127,8 @@
 
 
                         scope.showAlphabetTip = function(num) {
-                            scope.alphabetTipContent = num;
+                            scope.alphabetTipContent  = num;
+                            $rootScope.alphabetTipContent =num;
                         }
 
 
@@ -147,6 +145,7 @@
                                     return;
                                 } else {
                                     scope.alphabetTipContent = scope.alphabetIndexLists[n];
+                                    $rootScope.alphabetTipContent =angular.copy(scope.alphabetTipContent);
                                     scope.$apply();
                                 }
                             }
@@ -163,7 +162,7 @@
 
 
                         scope.$on('ion-alphabet-sidebar-on-touch', function() {
-                            scope.alphabetTipShow = true;
+                            $rootScope.alphabetTipShow = true;
                             angular.element($document[0].body).bind('touchstart', touchFuc);
                             angular.element($document[0].body).bind('mousedown', touchFuc);
 
@@ -172,7 +171,7 @@
                         });
 
                         scope.$on('ion-alphabet-sidebar-on-release', function() {
-                            scope.alphabetTipShow = false;
+                            $rootScope.alphabetTipShow = false;
                             angular.element($document[0].body).unbind('touchmove', touchFuc);
                             angular.element($document[0].body).unbind('mousemove', touchFuc);
 
